@@ -24,11 +24,11 @@ g++ -std=c++17 -O3 -march=native -fopenmp -Iinclude src/main.cpp src/stb_impl.cp
 
 ## اجرا و شروع آموزش (Visual Studio)
 1. `File ← Open ← Folder` و پوشه‌ی `minnn` (همان که `CMakeLists.txt` داخلش است) را باز کن.
-2. بالای صفحه، کنار نام کانفیگ (`x64-Debug`) را باز کن ← `Manage Configurations…` ← `+` ← **`x64-Release`**، و آن را انتخاب کن. **Debug حدود ۱۱ برابر کندتر است** (اندازه‌گیری: ۱۰۶۴ در برابر ۱۱۸۷۹ توکن/ثانیه). برای آموزش همیشه Release.
+2. بالای صفحه، کنار نام کانفیگ (`x64-Debug`) را باز کنید ← `Manage Configurations…` ← `+` ← **`x64-Release`**، و آن را انتخاب کن. **Debug حدود ۱۱ برابر کندتر است** (اندازه‌گیری: ۱۰۶۴ در برابر ۱۱۸۷۹ توکن/ثانیه). برای آموزش همیشه Release.
 3. `Build ← Build All`. فایل اجرایی: `out/build/x64-Release/minnn.exe` (مسیر دقیق در پنجره‌ی Output نوشته می‌شود).
 4. برنامه بدون آرگومان فقط راهنما را چاپ می‌کند. آرگومان دادن، یکی از این دو راه:
    - **ترمینال (ساده‌ترین):** `View ← Terminal`، سپس مثلاً `out\build\x64-Release\minnn.exe train-lm --text data/corpus --preset small --out data/lm.bin` از پوشه‌ی پروژه.
-   - **داخل IDE:** از `Debug ← Debug and Launch Settings for minnn` فایل `launch.vs.json` را بساز و `"args"` و `"currentDir": "${workspaceRoot}"` را بگذار (نمونه: `tools/launch.vs.json.example`). برای اجرا بدون دیباگر و باز ماندن کنسول: `Ctrl+F5`.
+   - **داخل IDE:** از `Debug ← Debug and Launch Settings for minnn` فایل `launch.vs.json` را بساز و `"args"` و `"currentDir": "${workspaceRoot}"` را بگذارید (نمونه: `tools/launch.vs.json.example`). برای اجرا بدون دیباگر و باز ماندن کنسول: `Ctrl+F5`.
 - امتحان سریع: `minnn.exe selftest` (باید 47/47) و `minnn.exe demo`.
 - کنسول ویندوز را روی UTF-8 می‌گذارم، ولی کنسول قدیمی حروف فارسی را جدا/برعکس نشان می‌دهد (فقط نمایش، خروجی درست است). **Windows Terminal** بهتر است.
 - تست‌شده: نسخه‌ی ویندوز با MinGW کامپایل شد (فقط build، بدون اجرا)؛ داخل خود Visual Studio/MSVC تست نشده.
