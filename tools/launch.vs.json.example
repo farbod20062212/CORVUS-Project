@@ -1,0 +1,40 @@
+// نمونه برای Visual Studio (Open Folder + CMake). امتحان‌نشده در خود Visual Studio؛ طرز استفاده در README.
+// پروژه را در Visual Studio باز کن، از منوی Debug گزینه‌ی "Debug and Launch Settings for minnn" را بزن تا
+// خود VS فایل .vs/launch.vs.json را با "project" و "projectTarget" درست بسازد. فقط "name" و "args" و "currentDir" را اضافه/عوض کن.
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "minnn.exe",
+      "name": "minnn: selftest",
+      "args": [ "selftest" ]
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "minnn.exe",
+      "name": "minnn: train-lm (sample chat)",
+      "args": [ "train-lm", "--chat", "data/sample_chat.csv", "--preset", "tiny", "--steps", "900", "--lr", "2e-3", "--out", "data/lm.bin" ],
+      "currentDir": "${workspaceRoot}"
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "minnn.exe",
+      "name": "minnn: train-lm (my text)",
+      "args": [ "train-lm", "--text", "data/corpus", "--preset", "small", "--out", "data/lm.bin" ],
+      "currentDir": "${workspaceRoot}"
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "minnn.exe",
+      "name": "minnn: chat",
+      "args": [ "chat", "--model", "data/lm.bin" ],
+      "currentDir": "${workspaceRoot}"
+    }
+  ]
+}
