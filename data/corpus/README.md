@@ -1,2 +1,2 @@
-فایل‌های متنی آموزشی (.txt، UTF-8) را اینجا بگذار. بعد:
-    minnn train-lm --text data/corpus --preset small --out data/lm.bin
+Place your training text files (.txt, UTF-8 encoded) here. Then:
+minnn train-lm --text data/corpus --preset small --out data/lm.bin
